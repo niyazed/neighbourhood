@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>🏘 Neighbourhood</title>
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="https://cdn-webgl.wrld3d.com/wrldjs/dist/latest/wrld.js"></script>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+            crossorigin=""
+        />
+
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin="">
+        </script>
+        <style>
+            #mapid { 
+                height: 500px; 
+            }
+        </style>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <p style="font-size:300%; text-align:left; font-family: 'Major Mono Display', monospace;">Neighbourhood</p>
+                <p class="help" style="font-family: 'Raleway', sans-serif;"> <strong>🤓 Your Hood < My Hood</strong></p>
+                <br><br><br>
+                <div class="columns">
+                    <div class="column is-narrow" style="width: 400px;">
+                            <p class="title is-5" style="font-family: 'Raleway', sans-serif;">Informations</p>
+                            <hr>
+                            <div class="box">
+                            <p class="help" style="font-family: 'Raleway', sans-serif;">Please fill up and submit to serve your <strong>Neighbourhood</strong>.</p><br>
+                            <div class="field">
+                                <label class="label" style="font-family: 'Raleway', sans-serif;">🎭 Username</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="eg. Superman23" id="username" onfocus="this.value=''">
+                                </div>
+                              </div>
+    
+                              <div class="field">
+                                <label class="label" style="font-family: 'Raleway', sans-serif;">📰 Your Text</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="your text" id="text" onfocus="this.value=''">
+                                </div>
+                              </div>
+    
+                              <div class="control">
+                                <button class="button is-success is-light" onclick="postData();">Submit</button>
+                              </div>
+                          </div>
+                        
+                          <div class="notification">
+                              <p style="font-family: 'Raleway', sans-serif;">
+                                ❗ Map will refresh every 2 seconds, if you want to roam around other hoods,
+                                please push that <strong>Pause</strong> button to stop.Refresh the whole page to get 
+                                continuos updates.
+                              </p>
+                            
+                          </div>
+                        
+                        
+
+                          <!-- disabled div -->
+                          <!-- <div id="list_div" style="display: none;">
+                            <p class="title is-5" style="font-family: 'Raleway', sans-serif;">Lists</p>
+                            <hr>
+                            <div id="lists" style="overflow:scroll; height:400px; padding:10px;" >
+                            
+                                <div id="list-item" class="box">
+                                    <div class="columns">
+                                        <div class="column">
+                                            <p style="font-family: 'Raleway', sans-serif;">☎ <b>Phone:</b> <span id="show_phone" ></span></p>
+                                            <p class="help" style="font-family: 'Raleway', sans-serif;">🕑 <span id="show_datetime" ></span> </p>
+                                            <p class="help" style="font-family: 'Raleway', sans-serif;">🗯 <span id="show_text" ></span> </p>        
+                                        </div>
+                                        <div class="column is-narrow">
+                                            <button class="button is-danger is-light is-small is-rounded">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                          </div>    
+                        </div> -->
+                    </div>
+                    <div class="column">
+                        <div>
+                            <span style="float: left"><p class="title is-5" style="font-family: 'Raleway', sans-serif;">Map</p></span>
+                            <span style="float: right"><button onclick="clearInterval(timer)" class="button is-danger is-light is-small">Pause</button></span><br>
+                        </div>
+                       
+                        <hr>
+                        <div class="box">
+                            <!-- <p class="subtitle">This column is only 200px wide.</p> -->
+                            <div id="mapid"></div>
+                          </div>
+                    </div>
+                  </div>
+            </div>
+          </section>
+
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            Made with ❤️ <a href="https://niyazed.github.io">Niyaz B. Hashem</a>. The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+          </p>
+        </div>
+      </footer>
+    </body>
+
+</html>

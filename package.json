@@ -1,0 +1,22 @@
+{
+  "name": "neighbourgoods",
+  "version": "1.0.0",
+  "description": "Help or exchange goods with your neighbour.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "covid-19",
+    "neighbour",
+    "goods",
+    "help",
+    "exchange"
+  ],
+  "author": "Niyaz B. Hashem",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}
