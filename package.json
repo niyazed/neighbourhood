@@ -1,7 +1,7 @@
 {
-  "name": "neighbourgoods",
+  "name": "neighbourhood",
   "version": "1.0.0",
-  "description": "Help or exchange goods with your neighbour.",
+  "description": "Have fun and help your neighbourhood.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,7 @@
     "neighbour",
     "goods",
     "help",
+    "chit-chat",
     "exchange"
   ],
   "author": "Niyaz B. Hashem",
