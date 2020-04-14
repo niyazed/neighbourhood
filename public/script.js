@@ -15,7 +15,7 @@ tiles.addTo(mymap);
 
 
 
-async function mapping(latitude, longitude, username, text, dateTime){
+async function mapping(latitude, longitude, username, text, dateTime, status){
 
     var volunteer_icon = L.icon({
         iconUrl: 'images/volunteer.png',
@@ -23,8 +23,16 @@ async function mapping(latitude, longitude, username, text, dateTime){
     });
     const marker = L.marker([0, 0], {icon: volunteer_icon}).addTo(mymap);
 
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition( async function(position) {
+            const currlatitude  = position.coords.latitude;
+            const currlongitude = position.coords.longitude; 
+            mymap.setView([currlatitude, currlongitude], 20);
+        });
+    }
+
     // map init,marker and popup binded stuffs
-    mymap.setView([latitude, longitude], 20);
+    
     marker.setLatLng([latitude, longitude]);
     marker.bindPopup('👤 <b>Username:</b> ' + username +  '<br>🕑 <b>Datetime:</b> ' + dateTime  +  '<br>🗯 <b>Text:</b> ' + text);
     
@@ -64,7 +72,7 @@ async function postData(){
             const json = await response.json()
             console.log(json)
             
-            getData();
+            //getData();
             mapping(latitude, longitude, username, text, dateTime);
             //document.getElementById('info_div').innerHTML = document.getElementById('list_div').innerHTML;
         });
