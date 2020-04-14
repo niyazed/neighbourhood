@@ -13,19 +13,19 @@ app.use(express.json({ limit: '1mb'}));
 const database = new Datastore('database.db');
 database.loadDatabase();
 
-setInterval(init_db, 17280000); //reinit db every 48 hours 48 x 60 x 60 x 1000 = [] ms
-function init_db(){
-    const path = './database.db'
+// setInterval(init_db, 17280000); //reinit db every 48 hours 48 x 60 x 60 x 1000 = [] ms
+// function init_db(){
+//     const path = './database.db'
     
-    try {
-      fs.unlinkSync(path)
-      database.loadDatabase();
-      console.log("[INFO] Database Reinitialized");
-      //file removed
-    } catch(err) {
-      console.error(err)
-    }
-}
+//     try {
+//       fs.unlinkSync(path)
+//       database.loadDatabase();
+//       console.log("[INFO] Database Reinitialized");
+//       //file removed
+//     } catch(err) {
+//       console.error(err)
+//     }
+// }
 
 app.post('/api', (request, response) => {
     const data = request.body
