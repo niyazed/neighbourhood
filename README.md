@@ -38,6 +38,10 @@ save you a lot of time in the long run, because you won't need to manually
 restart the server each time you make a small change in code. To install, run
 `sudo npm install -g nodemon`.
 
+Screenshot
+----------
+![screenshot.png](screenshot.png)
+
 Contributing
 ------------
 
